@@ -11,3 +11,18 @@ The project home page is at:
 ... whilst the source and issue tracker is available at:
 
     https://github.com/lamby/django-auto-one-to-one
+
+
+
+For example, given the following model definition:
+
+```
+from django.db import models
+from django_auto_one_to_one import AutoOneToOneModel
+
+class Parent(models.Model):
+    field_a = models.IntegerField(default=1)
+
+class Child(AutoOneToOneModel(Parent)):
+    field_b = models.IntegerField(default=2)
+```
